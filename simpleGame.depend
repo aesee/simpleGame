@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1519376469 source:d:\programs\git\simplegame\main.cpp
+1519378901 source:d:\programs\git\simplegame\main.cpp
 	<SFML/Graphics.hpp>
+	"Player.h"
 
 1486736397 d:\programs\git\sfml-2.4.2\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -389,4 +390,11 @@
 	<SFML/System/String.hpp>
 	<string>
 	<vector>
+
+1519378814 d:\programs\git\simplegame\include\player.h
+	<SFML/Graphics.hpp>
+	<string>
+
+1519378951 source:d:\programs\git\simplegame\src\player.cpp
+	"Player.h"
 
