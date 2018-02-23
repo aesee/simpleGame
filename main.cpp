@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "map.h"
 
 enum { LEFT, RIGHT, UP, DOWN };
 
@@ -7,6 +8,7 @@ int main()
 {
     // Create window
     sf::RenderWindow window(sf::VideoMode(640, 480), "Cool game");
+    //window.setFramerateLimit(60); // please check this
 
     // Set timer of events
     sf::Clock clock;
@@ -16,6 +18,14 @@ int main()
 
     // Create a character
     Player player("hero.png", 250,250,96.0,96.0);
+
+    // Define map
+    sf::Image map_image;
+    map_image.loadFromFile("Assets/map.png");
+    sf::Texture map_texture;
+    map_texture.loadFromImage(map_image);
+    sf::Sprite map;
+    map.setTexture(map_texture);
 
     // Game cycle
     while(window.isOpen())
@@ -72,9 +82,22 @@ int main()
 
         // Display graphics
         window.clear();
+
+        for(int i = 0; i < HEIGHT_MAP; i++)
+            for (int j = 0; j < WIDTH_MAP; j++)
+            {
+                if (TileMap[i][j] == ' ') map.setTextureRect(sf::IntRect(0,0,32,32));
+                if (TileMap[i][j] == 's') map.setTextureRect(sf::IntRect(32,0,32,32));
+                if (TileMap[i][j] == '0') map.setTextureRect(sf::IntRect(64,0,32,32));
+
+                map.setPosition(j*32,i*32);
+                window.draw(map);
+            }
+
         window.draw(player.sprite);
         window.display();
     }
 
     return 0;
 }
+
