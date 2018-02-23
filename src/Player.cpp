@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Level.h"
 
 enum { LEFT, RIGHT, UP, DOWN };
 
@@ -53,6 +54,35 @@ void Player::update(float time)
 
     speed = 0;
     sprite.setPosition(x,y);
+    interactionWithMap();
+}
+
+void Player::interactionWithMap()
+{
+    for (int i = y / 32; i < (y + h) / 32; i++)
+        for (int j = x / 32; j<(x + w) / 32; j++)
+        {
+            if (Level::TileMap[i][j] == '0')
+			{
+                if (dy>0)   y = i * 32 - h;
+				if (dy<0)	y = i * 32 + 32;
+				if (dx>0)	x = j * 32 - w;
+				if (dx < 0)	x = j * 32 + 32;
+            }
+
+            if (Level::TileMap[i][j] == 's')
+                Level::TileMap[i][j] = ' ';
+        }
+}
+
+float Player::getPlayerPosX()
+{
+    return x + 65;
+}
+
+float Player::getPlayerPosY()
+{
+    return y + 50;
 }
 
 Player::~Player()

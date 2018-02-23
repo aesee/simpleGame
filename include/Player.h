@@ -6,7 +6,7 @@
 class Player
 {
     public:
-        float x,y,w,h,dx,dy,speed;
+        float w,h,dx,dy,speed;
         int direction;
         std::string file;
         sf::Image image;
@@ -16,10 +16,12 @@ class Player
         Player(std::string File, float X, float Y, float W, float H);
         virtual ~Player();
         void update(float time);
-
-    protected:
+        float getPlayerPosX();
+        float getPlayerPosY();
 
     private:
+        float x,y;
+        void interactionWithMap();
 };
 
 #endif // PLAYER_H

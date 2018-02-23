@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
+#include "Camera.h"
 #include "Player.h"
-#include "map.h"
+#include "Level.h"
 
 enum { LEFT, RIGHT, UP, DOWN };
 
@@ -8,7 +9,7 @@ int main()
 {
     // Create window
     sf::RenderWindow window(sf::VideoMode(640, 480), "Cool game");
-    //window.setFramerateLimit(60); // please check this
+    //window.setFramerateLimit(60); // need to experiment with this
 
     // Set timer of events
     sf::Clock clock;
@@ -18,6 +19,10 @@ int main()
 
     // Create a character
     Player player("hero.png", 250,250,96.0,96.0);
+
+    // Set camera on scene
+    //camera.setSize(window.getSize().x, window.getSize().y);
+    camera.reset(sf::FloatRect(0,0,640,480));
 
     // Define map
     sf::Image map_image;
@@ -39,7 +44,7 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if(event.type == sf::Event::Closed)
+            if(event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
         }
 
@@ -80,15 +85,19 @@ int main()
         // Move the character
         player.update(time);
 
+        // Move the camera
+        setCameraInPos(player.getPlayerPosX(), player.getPlayerPosY());
+        window.setView(camera);
+
         // Display graphics
         window.clear();
 
-        for(int i = 0; i < HEIGHT_MAP; i++)
-            for (int j = 0; j < WIDTH_MAP; j++)
+        for(int i = 0; i < Level::HEIGHT_MAP; i++)
+            for (int j = 0; j < Level::WIDTH_MAP; j++)
             {
-                if (TileMap[i][j] == ' ') map.setTextureRect(sf::IntRect(0,0,32,32));
-                if (TileMap[i][j] == 's') map.setTextureRect(sf::IntRect(32,0,32,32));
-                if (TileMap[i][j] == '0') map.setTextureRect(sf::IntRect(64,0,32,32));
+                if (Level::TileMap[i][j] == ' ') map.setTextureRect(sf::IntRect(0,0,32,32));
+                if (Level::TileMap[i][j] == 's') map.setTextureRect(sf::IntRect(32,0,32,32));
+                if (Level::TileMap[i][j] == '0') map.setTextureRect(sf::IntRect(64,0,32,32));
 
                 map.setPosition(j*32,i*32);
                 window.draw(map);
@@ -100,4 +109,3 @@ int main()
 
     return 0;
 }
-

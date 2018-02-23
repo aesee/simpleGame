@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1519401777 source:d:\programs\git\simplegame\main.cpp
+1519408257 source:d:\programs\git\simplegame\main.cpp
 	<SFML/Graphics.hpp>
+	"Camera.h"
 	"Player.h"
-	"map.h"
+	"Level.h"
 
 1486736397 d:\programs\git\sfml-2.4.2\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -392,13 +393,23 @@
 	<string>
 	<vector>
 
-1519378814 d:\programs\git\simplegame\include\player.h
+1519407117 d:\programs\git\simplegame\include\player.h
 	<SFML/Graphics.hpp>
 	<string>
 
-1519379442 source:d:\programs\git\simplegame\src\player.cpp
+1519409040 source:d:\programs\git\simplegame\src\player.cpp
 	"Player.h"
+	"Level.h"
 
-1519400937 d:\programs\git\simplegame\include\map.h
+1519407545 d:\programs\git\simplegame\include\map.h
 	<SFML/Graphics.hpp>
+
+1519404298 d:\programs\git\simplegame\include\camera.h
+	<SFML/Graphics.hpp>
+
+1519408539 d:\programs\git\simplegame\include\level.h
+	<SFML/Graphics.hpp>
+
+1519408422 source:d:\programs\git\simplegame\src\level.cpp
+	"Level.h"
 
