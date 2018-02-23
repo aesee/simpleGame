@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 
+enum { LEFT, RIGHT, UP, DOWN };
+
 int main()
 {
     // Create window
@@ -34,7 +36,7 @@ int main()
         // Controls
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
-            player.direction = 0;
+            player.direction = LEFT;
             player.speed = 0.1;
             currentFrame += 0.005 * time;
             if (currentFrame > 3) currentFrame -= 3;
@@ -42,7 +44,7 @@ int main()
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
-            player.direction = 1;
+            player.direction = RIGHT;
             player.speed = 0.1;
             currentFrame += 0.005 * time;
             if (currentFrame > 3) currentFrame -= 3;
@@ -50,7 +52,7 @@ int main()
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
-            player.direction = 2;
+            player.direction = UP;
             player.speed = 0.1;
             currentFrame += 0.005 * time;
             if (currentFrame > 3) currentFrame -= 3;
@@ -58,7 +60,7 @@ int main()
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
-            player.direction = 3;
+            player.direction = DOWN;
             player.speed = 0.1;
             currentFrame += 0.005 * time;
             if (currentFrame > 3) currentFrame -= 3;
@@ -76,11 +78,3 @@ int main()
 
     return 0;
 }
-
-/*enum
-{
-    LEFT,
-    RIGHT,
-    UP,
-    DOWN
-};*/

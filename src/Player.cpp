@@ -1,5 +1,7 @@
 #include "Player.h"
 
+enum { LEFT, RIGHT, UP, DOWN };
+
 Player::Player(std::string File, float X, float Y, float W, float H)
 {
     dx = 0;
@@ -20,7 +22,7 @@ Player::Player(std::string File, float X, float Y, float W, float H)
     sprite.setTexture(texture);
 
     x = X;
-    y =Y;
+    y = Y;
     sprite.setTextureRect(sf::IntRect(0, 0, w, h));
 }
 
@@ -28,19 +30,19 @@ void Player::update(float time)
 {
     switch(direction)
     {
-        case 0:
+        case LEFT:
             dx = -speed;
             dy = 0;
             break;
-        case 1:
+        case RIGHT:
             dx = speed;
             dy = 0;
             break;
-        case 2:
+        case UP:
             dx = 0;
             dy = -speed;
             break;
-        case 3:
+        case DOWN:
             dx = 0;
             dy = speed;
             break;
