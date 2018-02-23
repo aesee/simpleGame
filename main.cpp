@@ -8,6 +8,9 @@ int main()
     // Set timer of events
     sf::Clock clock;
 
+    // Set frame counter
+    float currentFrame = 0;
+
     // Hero image
     sf::Image heroImage;
 
@@ -44,22 +47,30 @@ int main()
         // Controls
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         {
-            heroSprite.setTextureRect(sf::IntRect(0,96,96,96));
+            currentFrame += 0.005 * time;
+            if (currentFrame > 3) currentFrame -= 3;
+            heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame),96,96,96));
             heroSprite.move(-0.1 * time, 0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         {
-            heroSprite.setTextureRect(sf::IntRect(0,192,96,96));
+            currentFrame += 0.005 * time;
+            if (currentFrame > 3) currentFrame -= 3;
+            heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame),192,96,96));
             heroSprite.move(0.1 * time, 0);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
         {
-            heroSprite.setTextureRect(sf::IntRect(0,288,96,96));
+            currentFrame += 0.005 * time;
+            if (currentFrame > 3) currentFrame -= 3;
+            heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame),288,96,96));
             heroSprite.move(0, -0.1 * time);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
-            heroSprite.setTextureRect(sf::IntRect(0,0,96,96));
+            currentFrame += 0.005 * time;
+            if (currentFrame > 3) currentFrame -= 3;
+            heroSprite.setTextureRect(sf::IntRect(96 * int(currentFrame),0,96,96));
             heroSprite.move(0, 0.1 * time);
         }
 
