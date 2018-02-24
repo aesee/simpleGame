@@ -2,25 +2,20 @@
 #define PLAYER_H
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "Character.h"
 
-class Player
+class Player : public Character
 {
     public:
-        float w,h,dx,dy,speed;
-        int direction;
-        std::string file;
-        sf::Image image;
-        sf::Texture texture;
-        sf::Sprite sprite;
-
         Player(std::string File, float X, float Y, float W, float H);
-        virtual ~Player();
+        ~Player();
         void update(float time);
         float getPlayerPosX();
         float getPlayerPosY();
+        void control();
 
     private:
-        float x,y;
+        //float x,y;
         void interactionWithMap();
 };
 

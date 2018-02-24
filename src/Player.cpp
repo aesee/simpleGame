@@ -3,28 +3,9 @@
 
 enum { LEFT, RIGHT, UP, DOWN };
 
-Player::Player(std::string File, float X, float Y, float W, float H)
+Player::Player(std::string File, float X, float Y, float W, float H) : Character(File, X, Y, W, H)
 {
-    dx = 0;
-    dy = 0;
-    speed = 0;
-    direction = 0;
-    file = File;
-    w = W;
-    h = H;
-
-    if(!image.loadFromFile("Assets/" + file))
-    {
-        image.create(50,50,sf::Color(100,100,100));
-    }
-    //image.createMaskFromColor(Color(41, 33, 59)); // delete some noise from sprite
-    texture.loadFromImage(image);
-    image.~Image();
-    sprite.setTexture(texture);
-
-    x = X;
-    y = Y;
-    sprite.setTextureRect(sf::IntRect(0, 0, w, h));
+    // Nothing's here yet
 }
 
 void Player::update(float time)
@@ -55,6 +36,12 @@ void Player::update(float time)
     speed = 0;
     sprite.setPosition(x,y);
     interactionWithMap();
+    if (health < 0) speed = 0;
+}
+
+void Player::control()
+{
+
 }
 
 void Player::interactionWithMap()
@@ -72,6 +59,18 @@ void Player::interactionWithMap()
 
             if (Level::TileMap[i][j] == 's')
                 Level::TileMap[i][j] = ' ';
+
+            if (Level::TileMap[i][j] == 'f')
+            {
+                health -= 10;
+                Level::TileMap[i][j] = ' ';
+            }
+
+            if (Level::TileMap[i][j] == 'h')
+            {
+                health += 1;
+                Level::TileMap[i][j] = ' ';
+            }
         }
 }
 

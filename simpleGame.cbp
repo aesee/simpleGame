@@ -45,8 +45,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Camera.h" />
+		<Unit filename="include/Level.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Extensions>
 			<code_completion />

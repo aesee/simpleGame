@@ -2,14 +2,24 @@
 #include "Camera.h"
 #include "Player.h"
 #include "Level.h"
+#include <iostream>
+#include <sstream>
 
 enum { LEFT, RIGHT, UP, DOWN };
 
 int main()
 {
     // Create window
-    sf::RenderWindow window(sf::VideoMode(640, 480), "Cool game");
+    sf::RenderWindow window(sf::VideoMode(1024, 768), "Cool game");
+    //sf::RenderWindow window(sf::VideoMode(1024, 768), "Cool game", sf::Style::Fullscreen); // For release
     //window.setFramerateLimit(60); // need to experiment with this
+
+    // Load font
+    sf::Font font;
+    font.loadFromFile("Assets/ui_font.ttf");
+    sf::Text text("", font, 20);
+    text.setFillColor(sf::Color::White);
+    //text.setStyle(sf::Text::Bold);
 
     // Set timer of events
     sf::Clock clock;
@@ -71,7 +81,7 @@ int main()
             player.speed = 0.1;
             currentFrame += 0.005 * time;
             if (currentFrame > 3) currentFrame -= 3;
-            player.sprite.setTextureRect(sf::IntRect(96 * int(currentFrame),288,96,96));
+            player.sprite.setTextureRect(sf::IntRect(96 * int(currentFrame),307,96,96));
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::S))
         {
@@ -98,14 +108,33 @@ int main()
                 if (Level::TileMap[i][j] == ' ') map.setTextureRect(sf::IntRect(0,0,32,32));
                 if (Level::TileMap[i][j] == 's') map.setTextureRect(sf::IntRect(32,0,32,32));
                 if (Level::TileMap[i][j] == '0') map.setTextureRect(sf::IntRect(64,0,32,32));
+                if ((Level::TileMap[i][j] == 'f')) map.setTextureRect(sf::IntRect(96, 0, 32, 32));
+                if ((Level::TileMap[i][j] == 'h')) map.setTextureRect(sf::IntRect(128, 0, 32, 32));
 
                 map.setPosition(j*32,i*32);
                 window.draw(map);
             }
 
+
+        std::ostringstream playerHealthString;
+        playerHealthString << player.health;
+        text.setString("Health: " + playerHealthString.str());
+        text.setPosition(camera.getCenter().x - 300, camera.getCenter().y - 225);
+
         window.draw(player.sprite);
+        window.draw(text);
         window.display();
     }
 
     return 0;
 }
+
+/*  //Template for convert to string from any type
+template <typename T>
+std::string toString(const T& value)
+{
+    std::stringstream stream;
+    stream << value;
+    return stream.str();
+}
+*/
