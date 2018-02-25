@@ -57,7 +57,7 @@ void Player::interactionWithMap()
 				if (dx < 0)	x = j * 32 + 32;
             }
 
-            if (Level::TileMap[i][j] == 's')
+            /*if (Level::TileMap[i][j] == 's')
                 Level::TileMap[i][j] = ' ';
 
             if (Level::TileMap[i][j] == 'f')
@@ -70,7 +70,7 @@ void Player::interactionWithMap()
             {
                 health += 1;
                 Level::TileMap[i][j] = ' ';
-            }
+            }*/
         }
 }
 

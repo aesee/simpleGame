@@ -6,8 +6,8 @@
 class Level
 {
 public:
-    const static int HEIGHT_MAP = 25;
-    const static int WIDTH_MAP = 40;
+    const static int HEIGHT_MAP = 64;
+    const static int WIDTH_MAP = 64;
 
     static sf::String TileMap[HEIGHT_MAP];
 };

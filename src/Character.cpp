@@ -9,6 +9,7 @@ Character::Character(std::string File, float X, float Y, float W, float H)
     name = File;
     w = W;
     h = H;
+    changeDirection = 0;
 
     health = 10;
 
@@ -16,7 +17,7 @@ Character::Character(std::string File, float X, float Y, float W, float H)
     {
         image.create(50,50,sf::Color(100,100,100));
     }
-    //image.createMaskFromColor(Color(41, 33, 59)); // delete some noise from sprite
+    image.createMaskFromColor(sf::Color(255, 255, 255)); // delete some noise from sprite
     texture.loadFromImage(image);
     image.~Image();
     sprite.setTexture(texture);

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1519492594 source:d:\programs\git\simplegame\main.cpp
+1519572121 source:d:\programs\git\simplegame\main.cpp
 	<SFML/Graphics.hpp>
 	"Camera.h"
 	"Player.h"
@@ -395,31 +395,31 @@
 	<string>
 	<vector>
 
-1519492576 d:\programs\git\simplegame\include\player.h
+1519571384 d:\programs\git\simplegame\include\player.h
 	<SFML/Graphics.hpp>
 	<string>
 	"Character.h"
 
-1519492415 source:d:\programs\git\simplegame\src\player.cpp
+1519574509 source:d:\programs\git\simplegame\src\player.cpp
 	"Player.h"
 	"Level.h"
 
 1519407545 d:\programs\git\simplegame\include\map.h
 	<SFML/Graphics.hpp>
 
-1519404298 d:\programs\git\simplegame\include\camera.h
+1519574358 d:\programs\git\simplegame\include\camera.h
 	<SFML/Graphics.hpp>
 
-1519408539 d:\programs\git\simplegame\include\level.h
+1519574079 d:\programs\git\simplegame\include\level.h
 	<SFML/Graphics.hpp>
 
-1519483521 source:d:\programs\git\simplegame\src\level.cpp
+1519574258 source:d:\programs\git\simplegame\src\level.cpp
 	"Level.h"
 
-1519490191 d:\programs\git\simplegame\include\character.h
+1519571449 d:\programs\git\simplegame\include\character.h
 	<SFML/Graphics.hpp>
 	<string>
 
-1519491665 source:d:\programs\git\simplegame\src\character.cpp
+1519571463 source:d:\programs\git\simplegame\src\character.cpp
 	"Character.h"
 

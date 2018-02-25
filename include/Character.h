@@ -7,7 +7,7 @@ class Character
 {
     public:
         float x,y,w,h,dx,dy,speed;
-        int direction, health;
+        int direction, health, changeDirection;
         std::string name;
         sf::Image image;
         sf::Texture texture;
