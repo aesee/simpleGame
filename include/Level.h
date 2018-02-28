@@ -2,14 +2,87 @@
 #define LEVEL_H_INCLUDED
 #include <SFML/Graphics.hpp>
 
-// Class with static fields
 class Level
 {
 public:
-    const static int HEIGHT_MAP = 64;
-    const static int WIDTH_MAP = 64;
+    Level(std::string nameBackground);
+    virtual ~Level();
+    void draw(sf::RenderWindow & window);
+    void drawObjects();
 
-    static sf::String TileMap[HEIGHT_MAP];
+    static const int HEIGHT_MAP = 64;
+    static const int WIDTH_MAP = 64;
+    //static void display(sf::RenderWindow window);
+
+    sf::Texture bg_texture;
+    sf::Sprite background;
+
+    sf::String TileMap[HEIGHT_MAP] = {
+	"0000000000000000000000000000000000000000000000000000000000000000",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0                                                              0",
+	"0000000000000000000000000000000000000000000000000000000000000000",
+    };
 };
 
 #endif // MAP_H_INCLUDED

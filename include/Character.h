@@ -2,6 +2,7 @@
 #define CHARACTER_H
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "Level.h"
 
 class Character
 {
@@ -13,8 +14,9 @@ class Character
         sf::Texture texture;
         sf::Sprite sprite;
 
-        Character(std::string File, float X, float Y, float W, float H);
-        virtual ~Character();
+        Character(std::string name, float x, float y, float w, float h);
+        virtual ~Character() = 0;
+        void update();
 };
 
 #endif // CHARACTER_H

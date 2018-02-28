@@ -7,16 +7,19 @@
 class Player : public Character
 {
     public:
-        Player(std::string File, float X, float Y, float W, float H);
+        Player(std::string name, float x, float y, float w, float h);
         ~Player();
-        void update(float time);
+        void update(float time, Level & level);
         float getPlayerPosX();
         float getPlayerPosY();
-        void control();
+        void control(float & time);
+        bool attack;
 
     private:
         //float x,y;
-        void interactionWithMap();
+        void interactionWithMap(Level & level);
+        float currentFrame;
+        void movementControl(float & time);
 };
 
 #endif // PLAYER_H

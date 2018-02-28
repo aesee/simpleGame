@@ -3,12 +3,15 @@
 
 enum { LEFT, RIGHT, UP, DOWN };
 
-Player::Player(std::string File, float X, float Y, float W, float H) : Character(File, X, Y, W, H)
+Player::Player(std::string name, float x, float y, float w, float h) : Character(name, x, y, w, h)
 {
     // Nothing's here yet
+    attack = false;
+    // Set frame counter
+    currentFrame = 0;
 }
 
-void Player::update(float time)
+void Player::update(float time, Level & level)
 {
     switch(direction)
     {
@@ -35,21 +38,56 @@ void Player::update(float time)
 
     speed = 0;
     sprite.setPosition(x,y);
-    interactionWithMap();
+    interactionWithMap(level);
     if (health < 0) speed = 0;
 }
 
-void Player::control()
+void Player::control(float & time)
 {
-
+        if (attack)
+        {
+            currentFrame += 0.005 * time;
+            if (currentFrame > 10)
+            {
+                attack = false;
+                currentFrame -= 10;
+            }
+            sprite.setTextureRect(sf::IntRect(w * int(currentFrame),changeDirection * h + 64,w,h));
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        {
+            attack = true;
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        {
+            direction = LEFT;
+            changeDirection = 1;
+            movementControl(time);
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        {
+            direction = RIGHT;
+            changeDirection = 0;
+            movementControl(time);
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        {
+            direction = UP;
+            movementControl(time);
+        }
+        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        {
+            direction = DOWN;
+            movementControl(time);
+        }
 }
 
-void Player::interactionWithMap()
+void Player::interactionWithMap(Level & level)
 {
     for (int i = y / 32; i < (y + h) / 32; i++)
         for (int j = x / 32; j<(x + w) / 32; j++)
         {
-            if (Level::TileMap[i][j] == '0')
+            if (level.TileMap[i][j] == '0')
 			{
                 if (dy>0)   y = i * 32 - h;
 				if (dy<0)	y = i * 32 + 32;
@@ -72,6 +110,16 @@ void Player::interactionWithMap()
                 Level::TileMap[i][j] = ' ';
             }*/
         }
+}
+
+void Player::movementControl(float & time)
+{
+    speed = 0.05;
+    currentFrame += 0.005 * time;
+    if (currentFrame > 10)
+        currentFrame -= 10;
+    //if ((int)currentFrame % 5 == 0) speed = 0.06;
+    sprite.setTextureRect(sf::IntRect(w * int(currentFrame),changeDirection * h,w,h));
 }
 
 float Player::getPlayerPosX()

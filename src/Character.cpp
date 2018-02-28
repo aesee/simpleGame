@@ -1,14 +1,14 @@
 #include "Character.h"
 
-Character::Character(std::string File, float X, float Y, float W, float H)
+Character::Character(std::string name, float x, float y, float w, float h)
 {
     dx = 0;
     dy = 0;
     speed = 0;
     direction = 0;
-    name = File;
-    w = W;
-    h = H;
+    this->name = name;
+    this->w = w;
+    this->h = h;
     changeDirection = 0;
 
     health = 10;
@@ -22,10 +22,15 @@ Character::Character(std::string File, float X, float Y, float W, float H)
     image.~Image();
     sprite.setTexture(texture);
 
-    x = X;
-    y = Y;
+    this->x = x;
+    this->y = y;
     sprite.setTextureRect(sf::IntRect(0, 0, w, h));
 }
+
+/*void Character::describeLevel(Level data)
+{
+    level = data;
+}*/
 
 Character::~Character()
 {

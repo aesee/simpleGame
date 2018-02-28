@@ -13,7 +13,6 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="../SFML-2.4.2/include" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
@@ -30,7 +29,6 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="../SFML-2.4.2/include" />
 					<Add directory="include" />
 				</Compiler>
 				<Linker>
@@ -44,15 +42,20 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="../SFML-2.4.2/include" />
 		</Compiler>
 		<Unit filename="include/Camera.h" />
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/Goblin.h" />
 		<Unit filename="include/Level.h" />
+		<Unit filename="include/Monster.h" />
 		<Unit filename="include/Player.h" />
-		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Goblin.cpp" />
 		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/Monster.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
