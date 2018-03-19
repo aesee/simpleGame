@@ -46,15 +46,20 @@
 		</Compiler>
 		<Unit filename="include/Camera.h" />
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/GameOver.h" />
 		<Unit filename="include/Goblin.h" />
+		<Unit filename="include/Golem.h" />
 		<Unit filename="include/Level.h" />
 		<Unit filename="include/Monster.h" />
 		<Unit filename="include/Player.h" />
+		<Unit filename="include/Skeleton.h" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Goblin.cpp" />
+		<Unit filename="src/Golem.cpp" />
 		<Unit filename="src/Level.cpp" />
 		<Unit filename="src/Monster.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Skeleton.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

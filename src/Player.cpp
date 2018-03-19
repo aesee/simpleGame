@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Level.h"
+#include "GameOver.h"
 
 enum { LEFT, RIGHT, UP, DOWN };
 
@@ -9,37 +10,44 @@ Player::Player(std::string name, float x, float y, float w, float h) : Character
     attack = false;
     // Set frame counter
     currentFrame = 0;
+
+    health = 10;
 }
 
 void Player::update(float time, Level & level)
 {
-    switch(direction)
+    if (health > 0)
     {
-        case LEFT:
-            dx = -speed;
-            dy = 0;
-            break;
-        case RIGHT:
-            dx = speed;
-            dy = 0;
-            break;
-        case UP:
-            dx = 0;
-            dy = -speed;
-            break;
-        case DOWN:
-            dx = 0;
-            dy = speed;
-            break;
+        control(time);
+
+        switch(direction)
+        {
+            case LEFT:
+                dx = -speed;
+                dy = 0;
+                break;
+            case RIGHT:
+                dx = speed;
+                dy = 0;
+                break;
+            case UP:
+                dx = 0;
+                dy = -speed;
+                break;
+            case DOWN:
+                dx = 0;
+                dy = speed;
+                break;
+        }
+
+        x += dx * time;
+        y += dy * time;
+
+        speed = 0;
+        sprite.setPosition(x,y);
+        interactionWithMap(level);
     }
-
-    x += dx * time;
-    y += dy * time;
-
-    speed = 0;
-    sprite.setPosition(x,y);
-    interactionWithMap(level);
-    if (health < 0) speed = 0;
+    else gameOver();
 }
 
 void Player::control(float & time)
@@ -122,6 +130,7 @@ void Player::movementControl(float & time)
     sprite.setTextureRect(sf::IntRect(w * int(currentFrame),changeDirection * h,w,h));
 }
 
+// The following used only for camera offset
 float Player::getPlayerPosX()
 {
     return x + 65;

@@ -423,10 +423,10 @@
 1519571463 source:d:\programs\git\simplegame\src\character.cpp
 	"Character.h"
 
-1519722969 source:c:\program files\cpp game\simplegame\src\character.cpp
+1521447625 source:c:\program files\cpp game\simplegame\src\character.cpp
 	"Character.h"
 
-1519722916 c:\program files\cpp game\simplegame\include\character.h
+1521447572 c:\program files\cpp game\simplegame\include\character.h
 	<SFML/Graphics.hpp>
 	<string>
 	"Level.h"
@@ -825,7 +825,7 @@
 1519639148 c:\program files\cpp game\simplegame\include\level.h
 	<SFML/Graphics.hpp>
 
-1519723327 source:c:\program files\cpp game\simplegame\src\player.cpp
+1521447228 source:c:\program files\cpp game\simplegame\src\player.cpp
 	"Player.h"
 	"Level.h"
 
@@ -842,7 +842,7 @@
 	<iostream>
 	<sstream>
 
-1519577960 c:\program files\cpp game\simplegame\include\camera.h
+1521438136 c:\program files\cpp game\simplegame\include\camera.h
 	<SFML/Graphics.hpp>
 
 1519714562 source:c:\program files\cpp game\simplegame\monster.cpp
@@ -851,24 +851,40 @@
 1519714752 c:\program files\cpp game\simplegame\monster.h
 	"Character.h"
 
-1519723344 source:c:\program files\cpp game\simplegame\src\main.cpp
+1521447879 source:c:\program files\cpp game\simplegame\src\main.cpp
 	<SFML/Graphics.hpp>
 	"Camera.h"
 	"Player.h"
+	"Goblin.h"
+	"Skeleton.h"
+	"Golem.h"
+	"Character.h"
 	"Level.h"
 	<iostream>
 	<sstream>
 
-1519723096 source:c:\program files\cpp game\simplegame\src\monster.cpp
+1521447907 source:c:\program files\cpp game\simplegame\src\monster.cpp
 	"Monster.h"
 
-1519723074 c:\program files\cpp game\simplegame\include\monster.h
+1521443441 c:\program files\cpp game\simplegame\include\monster.h
 	"Character.h"
 	"Player.h"
 
-1519717245 source:c:\program files\cpp game\simplegame\src\goblin.cpp
+1521444492 source:c:\program files\cpp game\simplegame\src\goblin.cpp
 	"Goblin.h"
 
-1519717228 c:\program files\cpp game\simplegame\include\goblin.h
+1521445229 c:\program files\cpp game\simplegame\include\goblin.h
+	"Monster.h"
+
+1521444502 source:c:\program files\cpp game\simplegame\src\skeleton.cpp
+	"Skeleton.h"
+
+1521443890 c:\program files\cpp game\simplegame\include\skeleton.h
+	"Monster.h"
+
+1521445287 source:c:\program files\cpp game\simplegame\src\golem.cpp
+	"Golem.h"
+
+1521445250 c:\program files\cpp game\simplegame\include\golem.h
 	"Monster.h"
 

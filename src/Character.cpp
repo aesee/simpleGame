@@ -11,8 +11,6 @@ Character::Character(std::string name, float x, float y, float w, float h)
     this->h = h;
     changeDirection = 0;
 
-    health = 10;
-
     if(!image.loadFromFile("Assets/" + name))
     {
         image.create(50,50,sf::Color(100,100,100));
@@ -25,6 +23,17 @@ Character::Character(std::string name, float x, float y, float w, float h)
     this->x = x;
     this->y = y;
     sprite.setTextureRect(sf::IntRect(0, 0, w, h));
+}
+
+int Character::getHealth()
+{
+    return health;
+}
+
+void Character::setDamage(int power)
+{
+    if (health > 0)
+        health -= power;
 }
 
 /*void Character::describeLevel(Level data)

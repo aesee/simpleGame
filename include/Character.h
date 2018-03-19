@@ -6,9 +6,12 @@
 
 class Character
 {
+    protected:
+        int health;
+
     public:
         float x,y,w,h,dx,dy,speed;
-        int direction, health, changeDirection;
+        int direction, changeDirection;
         std::string name;
         sf::Image image;
         sf::Texture texture;
@@ -17,6 +20,8 @@ class Character
         Character(std::string name, float x, float y, float w, float h);
         virtual ~Character() = 0;
         void update();
+        int getHealth();
+        void setDamage(int power);
 };
 
 #endif // CHARACTER_H

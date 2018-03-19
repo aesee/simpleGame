@@ -9,11 +9,13 @@ class Monster : public Character
     public:
         Monster(std::string name, float x, float y, float w, float h);
         virtual ~Monster() = 0;
-        void update(Player & player);
+        void update(float time, Level & level, Player & player);
 
-    private:
+    protected:
         int power;
         void attack(Player & player);
+        int aiCounter;
+        float currentFrame;
 };
 
 #endif // MONSTER_H

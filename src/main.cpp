@@ -1,11 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "Camera.h"
 #include "Player.h"
+#include "Goblin.h"
+#include "Skeleton.h"
+#include "Golem.h"
+#include "Character.h"
 #include "Level.h"
 #include <iostream>
 #include <sstream>
-
-//enum { LEFT, RIGHT, UP, DOWN };
 
 sf::Font font;
 sf::Text text;
@@ -31,6 +33,11 @@ int main()
     // Create a character
     Player player("hero.png", 100,50,32.0,32.0);
 
+    // Create a monsters for a hero
+    Skeleton skeleton("skeleton.png", 100,220,16.0,32.0);
+    Goblin goblin("goblin.png", 400,320,16.0,32.0);
+    Golem golem("golem.png", 600,520,32.0,32.0);
+
     // Set camera on scene
     //camera.setSize(window.getSize().x, window.getSize().y);
     camera.reset(sf::FloatRect(0,0,640,480));
@@ -54,11 +61,12 @@ int main()
                 window.close();
         }
 
-        // Process the controls
-        player.control(time);
-
         // And then move the character
         player.update(time, level);
+        // and the monsters
+        goblin.update(time, level, player);
+        skeleton.update(time, level, player);
+        golem.update(time, level, player);
 
         // Move the camera
         setCameraInPos(player.getPlayerPosX(), player.getPlayerPosY());
@@ -66,7 +74,7 @@ int main()
 
         // Update UI
         std::ostringstream playerHealthString;
-        playerHealthString << player.health;
+        playerHealthString << player.getHealth();
         text.setString("Health: " + playerHealthString.str());
         text.setPosition(camera.getCenter().x - 300, camera.getCenter().y - 225);
 
@@ -74,6 +82,9 @@ int main()
         window.clear();
         level.draw(window);
         window.draw(player.sprite);
+        window.draw(goblin.sprite);
+        window.draw(skeleton.sprite);
+        window.draw(golem.sprite);
         window.draw(text);
         window.display();
     }
