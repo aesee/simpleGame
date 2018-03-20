@@ -423,7 +423,7 @@
 1519571463 source:d:\programs\git\simplegame\src\character.cpp
 	"Character.h"
 
-1521447625 source:c:\program files\cpp game\simplegame\src\character.cpp
+1521523904 source:c:\program files\cpp game\simplegame\src\character.cpp
 	"Character.h"
 
 1521447572 c:\program files\cpp game\simplegame\include\character.h
@@ -822,12 +822,13 @@
 1519637159 source:c:\program files\cpp game\simplegame\src\level.cpp
 	"Level.h"
 
-1519639148 c:\program files\cpp game\simplegame\include\level.h
+1521536814 c:\program files\cpp game\simplegame\include\level.h
 	<SFML/Graphics.hpp>
 
-1521447228 source:c:\program files\cpp game\simplegame\src\player.cpp
+1521448152 source:c:\program files\cpp game\simplegame\src\player.cpp
 	"Player.h"
 	"Level.h"
+	"GameOver.h"
 
 1519723008 c:\program files\cpp game\simplegame\include\player.h
 	<SFML/Graphics.hpp>
@@ -842,7 +843,7 @@
 	<iostream>
 	<sstream>
 
-1521438136 c:\program files\cpp game\simplegame\include\camera.h
+1521537578 c:\program files\cpp game\simplegame\include\camera.h
 	<SFML/Graphics.hpp>
 
 1519714562 source:c:\program files\cpp game\simplegame\monster.cpp
@@ -851,7 +852,7 @@
 1519714752 c:\program files\cpp game\simplegame\monster.h
 	"Character.h"
 
-1521447879 source:c:\program files\cpp game\simplegame\src\main.cpp
+1521536620 source:c:\program files\cpp game\simplegame\src\main.cpp
 	<SFML/Graphics.hpp>
 	"Camera.h"
 	"Player.h"
@@ -862,6 +863,7 @@
 	"Level.h"
 	<iostream>
 	<sstream>
+	"MonstersController.h"
 
 1521447907 source:c:\program files\cpp game\simplegame\src\monster.cpp
 	"Monster.h"
@@ -887,4 +889,22 @@
 
 1521445250 c:\program files\cpp game\simplegame\include\golem.h
 	"Monster.h"
+
+1521448483 c:\program files\cpp game\simplegame\include\gameover.h
+	<SFML/Graphics.hpp>
+
+1521526795 c:\program files\cpp game\simplegame\include\monsterscontroller.h
+	"Monster.h"
+	<list>
+	<SFML/Graphics.hpp>
+
+1521535972 source:c:\program files\cpp game\simplegame\src\monsterscontroller.cpp
+	"MonstersController.h"
+	<SFML/Graphics.hpp>
+	"Player.h"
+	"Goblin.h"
+	"Skeleton.h"
+	"Golem.h"
+	"Character.h"
+	"Level.h"
 

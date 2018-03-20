@@ -2,29 +2,29 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="include\Player.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Camera.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="518" topLine="0" />
+			<Cursor1 position="442" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Level.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Level.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="554" topLine="0" />
+			<Cursor1 position="552" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Skeleton.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\MonstersController.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="208" topLine="0" />
+			<Cursor1 position="391" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Character.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Monster.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="693" topLine="0" />
+			<Cursor1 position="431" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Skeleton.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Goblin.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="131" topLine="0" />
+			<Cursor1 position="121" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\Golem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,22 +32,17 @@
 			<Cursor1 position="153" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Monster.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MonstersController.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2065" topLine="0" />
+			<Cursor1 position="785" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src\Goblin.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="120" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\Golem.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="193" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\GameOver.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="116" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\Camera.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="193" topLine="0" />
 		</Cursor>
@@ -57,34 +52,49 @@
 			<Cursor1 position="149" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Level.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\GameOver.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="84" topLine="0" />
+			<Cursor1 position="116" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2006" topLine="39" />
+			<Cursor1 position="2311" topLine="48" />
 		</Cursor>
 	</File>
-	<File name="src\Player.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Player.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1060" topLine="21" />
+			<Cursor1 position="518" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Level.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="107" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\Skeleton.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="208" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Skeleton.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="131" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\Monster.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="436" topLine="0" />
+			<Cursor1 position="87" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\Goblin.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Player.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="121" topLine="0" />
+			<Cursor1 position="914" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\Goblin.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Character.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="120" topLine="0" />
+			<Cursor1 position="116" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

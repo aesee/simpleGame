@@ -8,6 +8,7 @@
 #include "Level.h"
 #include <iostream>
 #include <sstream>
+#include "MonstersController.h"
 
 sf::Font font;
 sf::Text text;
@@ -24,9 +25,6 @@ int main()
     text = sf::Text("", font, 20);
     text.setFillColor(sf::Color::White);
 
-    // Set frame counter
-    //float currentFrame = 0;
-
     // Set timer for events
     sf::Clock clock;
 
@@ -34,16 +32,13 @@ int main()
     Player player("hero.png", 100,50,32.0,32.0);
 
     // Create a monsters for a hero
-    Skeleton skeleton("skeleton.png", 100,220,16.0,32.0);
-    Goblin goblin("goblin.png", 400,320,16.0,32.0);
-    Golem golem("golem.png", 600,520,32.0,32.0);
+    MonstersController monsters;
 
     // Set camera on scene
-    //camera.setSize(window.getSize().x, window.getSize().y);
     camera.reset(sf::FloatRect(0,0,640,480));
 
     // Define map
-    Level level("map_bg.png");
+    Level level("map_bg2.png");
 
     // Game cycle
     while(window.isOpen())
@@ -64,9 +59,7 @@ int main()
         // And then move the character
         player.update(time, level);
         // and the monsters
-        goblin.update(time, level, player);
-        skeleton.update(time, level, player);
-        golem.update(time, level, player);
+        monsters.update(time,level,player);
 
         // Move the camera
         setCameraInPos(player.getPlayerPosX(), player.getPlayerPosY());
@@ -82,9 +75,7 @@ int main()
         window.clear();
         level.draw(window);
         window.draw(player.sprite);
-        window.draw(goblin.sprite);
-        window.draw(skeleton.sprite);
-        window.draw(golem.sprite);
+        monsters.draw(window);
         window.draw(text);
         window.display();
     }
