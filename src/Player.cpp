@@ -12,6 +12,8 @@ Player::Player(std::string name, float x, float y, float w, float h) : Character
     currentFrame = 0;
 
     health = 10;
+
+    input = new InputHandler();
 }
 
 void Player::update(float time, Level & level)
@@ -62,7 +64,7 @@ void Player::control(float & time)
             }
             sprite.setTextureRect(sf::IntRect(w * int(currentFrame),changeDirection * h + 64,w,h));
         }
-        else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        /*else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
         {
             attack = true;
         }
@@ -87,7 +89,10 @@ void Player::control(float & time)
         {
             direction = DOWN;
             movementControl(time);
-        }
+        }*/
+
+        Command* command = input->handleInput();
+        if (command) command->execute(*this, time);
 }
 
 void Player::interactionWithMap(Level & level)
@@ -139,6 +144,56 @@ float Player::getPlayerPosX()
 float Player::getPlayerPosY()
 {
     return y + 50;
+}
+
+class LeftMovement : public Command
+{
+    public:
+        virtual void execute(Player & player, float time)
+        {
+            player.direction = LEFT;
+            player.changeDirection = 1;
+            player.movementControl(time);
+        }
+};
+
+class RightMovement : public Command
+{
+    public:
+        virtual void execute(Player & player, float time)
+        {
+            player.direction = RIGHT;
+            player.changeDirection = 0;
+            player.movementControl(time);
+        }
+};
+
+class UpMovement : public Command
+{
+    public:
+        virtual void execute(Player & player, float time)
+        {
+            player.direction = UP;
+            player.movementControl(time);
+        }
+};
+
+class DownMovement : public Command
+{
+    public:
+        virtual void execute(Player & player, float time)
+        {
+            player.direction = DOWN;
+            player.movementControl(time);
+        }
+};
+
+InputHandler::InputHandler()
+{
+    left_ = new LeftMovement();
+    right_ = new RightMovement();
+    up_ = new UpMovement();
+    down_ = new DownMovement();
 }
 
 Player::~Player()

@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "Character.h"
+#include "Command.h"
 
 class Player : public Character
 {
@@ -14,12 +15,13 @@ class Player : public Character
         float getPlayerPosY();
         void control(float & time);
         bool attack;
+        void movementControl(float & time);
 
     private:
         //float x,y;
         void interactionWithMap(Level & level);
         float currentFrame;
-        void movementControl(float & time);
+        InputHandler* input;
 };
 
 #endif // PLAYER_H

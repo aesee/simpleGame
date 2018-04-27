@@ -395,32 +395,35 @@
 	<string>
 	<vector>
 
-1519571384 d:\programs\git\simplegame\include\player.h
+1524853725 d:\programs\git\simplegame\include\player.h
 	<SFML/Graphics.hpp>
 	<string>
 	"Character.h"
+	"Command.h"
 
-1519574509 source:d:\programs\git\simplegame\src\player.cpp
+1524854283 source:d:\programs\git\simplegame\src\player.cpp
 	"Player.h"
 	"Level.h"
+	"GameOver.h"
 
 1519407545 d:\programs\git\simplegame\include\map.h
 	<SFML/Graphics.hpp>
 
-1519574358 d:\programs\git\simplegame\include\camera.h
+1521533980 d:\programs\git\simplegame\include\camera.h
 	<SFML/Graphics.hpp>
 
-1519574079 d:\programs\git\simplegame\include\level.h
+1521533216 d:\programs\git\simplegame\include\level.h
 	<SFML/Graphics.hpp>
 
-1519574258 source:d:\programs\git\simplegame\src\level.cpp
+1519633560 source:d:\programs\git\simplegame\src\level.cpp
 	"Level.h"
 
-1519571449 d:\programs\git\simplegame\include\character.h
+1521443974 d:\programs\git\simplegame\include\character.h
 	<SFML/Graphics.hpp>
 	<string>
+	"Level.h"
 
-1519571463 source:d:\programs\git\simplegame\src\character.cpp
+1521520306 source:d:\programs\git\simplegame\src\character.cpp
 	"Character.h"
 
 1521523904 source:c:\program files\cpp game\simplegame\src\character.cpp
@@ -907,4 +910,62 @@
 	"Golem.h"
 	"Character.h"
 	"Level.h"
+
+1521440894 source:d:\programs\git\simplegame\src\goblin.cpp
+	"Goblin.h"
+
+1521441630 d:\programs\git\simplegame\include\goblin.h
+	"Monster.h"
+
+1521439842 d:\programs\git\simplegame\include\monster.h
+	"Character.h"
+	"Player.h"
+
+1521441688 source:d:\programs\git\simplegame\src\golem.cpp
+	"Golem.h"
+
+1521441652 d:\programs\git\simplegame\include\golem.h
+	"Monster.h"
+
+1521533022 source:d:\programs\git\simplegame\src\main.cpp
+	<SFML/Graphics.hpp>
+	"Camera.h"
+	"Player.h"
+	"Goblin.h"
+	"Skeleton.h"
+	"Golem.h"
+	"Character.h"
+	"Level.h"
+	<iostream>
+	<sstream>
+	"MonstersController.h"
+
+1521440292 d:\programs\git\simplegame\include\skeleton.h
+	"Monster.h"
+
+1521523196 d:\programs\git\simplegame\include\monsterscontroller.h
+	"Monster.h"
+	<list>
+	<SFML/Graphics.hpp>
+
+1521444308 source:d:\programs\git\simplegame\src\monster.cpp
+	"Monster.h"
+
+1521532374 source:d:\programs\git\simplegame\src\monsterscontroller.cpp
+	"MonstersController.h"
+	<SFML/Graphics.hpp>
+	"Player.h"
+	"Goblin.h"
+	"Skeleton.h"
+	"Golem.h"
+	"Character.h"
+	"Level.h"
+
+1521444884 d:\programs\git\simplegame\include\gameover.h
+	<SFML/Graphics.hpp>
+
+1521440904 source:d:\programs\git\simplegame\src\skeleton.cpp
+	"Skeleton.h"
+
+1524854343 d:\programs\git\simplegame\include\command.h
 
